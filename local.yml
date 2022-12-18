@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./compose/app/Dockerfile
+    volumes:
+      - . /app/
+    restart: always
+    command: npm run dev
+    ports:
+     - "3000:3000"
